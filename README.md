@@ -9,6 +9,7 @@
 - Compare the Properties of Two Elements
 - Test if One Value is Below or At Least as Large as Another
 - Test if a Value Falls within a Specific Range
+- Test if a Value is an Array
 
 ---
 
