@@ -8,6 +8,7 @@
 - Use the Triple Equals to Assert Strict Equality
 - Compare the Properties of Two Elements
 - Test if One Value is Below or At Least as Large as Another
+- Test if a Value Falls within a Specific Range
 
 ---
 
