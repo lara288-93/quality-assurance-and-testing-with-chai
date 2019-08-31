@@ -10,6 +10,7 @@
 - Test if One Value is Below or At Least as Large as Another
 - Test if a Value Falls within a Specific Range
 - Test if a Value is an Array
+- Test if an Array Contains an Item
 
 ---
 
