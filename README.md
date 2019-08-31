@@ -1,6 +1,7 @@
 # Quality Assurance and Testing with Chai
 
 - Learn How JavaScript Assertions Work
+- Test if a Variable or Function is Defined
 
 ---
 
