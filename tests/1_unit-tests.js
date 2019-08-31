@@ -46,6 +46,7 @@ suite('Unit Tests', function () {
   // -----------------------------------------------------------------------------
   
   suite('Equality', function () {
+    
     /** 5 - .equal(), .notEqual() **/
     // .equal() compares objects using '=='
     test('#equal, #notEqual', function () {
@@ -54,6 +55,7 @@ suite('Unit Tests', function () {
       assert.equal(6 * '2', '12', 'no more hints...');
       assert.notEqual(6 + '2', '12', 'type your error message if you want' );
     });
+    
     /** 6 - .strictEqual(), .notStrictEqual() **/
     // .strictEqual() compares objects using '==='
     test('#strictEqual, #notStrictEqual', function () {
@@ -62,6 +64,7 @@ suite('Unit Tests', function () {
       assert.strictEqual(6*'2', 12);
       assert.notStrictEqual([1, 'a', {}], [1, 'a', {}]);
     });
+    
     /** 7 - .deepEqual(), .notDeepEqual() **/
     // .deepEqual() asserts that two object are deep equal
     test('#deepEqual, #notDeepEqual', function () {
@@ -81,11 +84,11 @@ suite('Unit Tests', function () {
   suite('Comparisons', function() {
     
     /** 8 - .isAbove() => a > b , .isAtMost() => a <= b **/
-    test('#isAbove, #isAtMost', function() {
-      assert.fail('hello'.length , 5);
-      assert.fail(1, 0);
-      assert.fail(Math.PI, 3);
-      assert.fail(1 - Math.random(), 1);
+    test('#isAbove, #isAtMost', function () {
+      assert.isAtMost('hello'.length , 5);
+      assert.isAbove(1, 0);
+      assert.isAbove(Math.PI, 3);
+      assert.isAtMost(1 - Math.random(), 1);
     });
 
     /** 9 - .isBelow() => a < b , .isAtLeast =>  a >= b **/
