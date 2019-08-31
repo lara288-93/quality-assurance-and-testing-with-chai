@@ -5,6 +5,7 @@
 - Use Assert.isOK and Assert.isNotOK
 - Test for Truthiness
 - Use the Double Equals to Assert Equality
+- Use the Triple Equals to Assert Strict Equality
 
 ---
 
