@@ -1,20 +1,20 @@
-var chai = require('chai');
-var assert = chai.assert;
+const chai = require('chai');
+const assert = chai.assert;
 
-var server = require('../server');    /** import the Express app **/
+const server = require('../server');    /** import the Express app **/
 
-var chaiHttp = require('chai-http');  /** require the chai-http plugin **/
+const chaiHttp = require('chai-http');  /** require the chai-http plugin **/
 chai.use(chaiHttp);                   /** use the chai-http plugin **/
 
 
-suite('Functional Tests', function() {
+suite('Functional Tests', function () {
 
   // Mocha allows testing asyncronous operations.
   // There is a small (BIG) difference. Can you spot it ?
   
   // ### EXAMPLE ### 
-  test('Asynchronous test #example', function(done){ /** <= Pass a callback to the test function **/
-    setTimeout(function(){
+  test('Asynchronous test #example', function (done) { /** <= Pass a callback to the test function **/
+    setTimeout(function () {
       assert.isOk('Async test !!');
       done(); /** Call 'done()' when the async operation is completed**/
     }, 500);   // the function will be executed after 500ms
@@ -30,10 +30,10 @@ suite('Functional Tests', function() {
     // ### EXAMPLE ### 
     suite('GET /hello?name=[name] => "hello [name]"', function(){
       // We send a name string in the url query string.
-      test('#example - ?name=John',  function(done){   // Don't forget the callback...
+      test('#example - ?name=John',  function (done) {   // Don't forget the callback...
          chai.request(server)             // 'server' is the Express App
           .get('/hello?name=John')        // http_method(url)
-          .end(function(err, res){        // Send the request. Pass a callback in
+          .end(function (err, res) {        // Send the request. Pass a callback in
                                           // node style. `res` is the response object
             // res.status contains the status code
             assert.equal(res.status, 200, 'response status should be 200');
@@ -47,16 +47,16 @@ suite('Functional Tests', function() {
        * Replace assert.fail(). Make the test pass. **/
        
       // If no name is passed, the endpoint responds with 'hello Guest'.
-      test('Test GET /hello with no name',  function(done){ // Don't forget the callback...
+      test('Test GET /hello with no name',  function (done) { // Don't forget the callback...
          chai.request(server)             // 'server' is the Express App
           .get('/hello')                  // http_method(url). NO NAME in the query !
-          .end(function(err, res){        // res is the response object
+          .end(function (err, res) {        // res is the response object
           
             // Test the status and the text response (see the example above). 
             // Please follow the order -status, -text. We rely on that in our tests.
             // It should respond 'Hello Guest'
-            assert.fail(res.status, 200);
-            assert.fail(res.text, 'hello Guest');
+            assert.equal(res.status, 200);
+            assert.equal(res.text, 'hello Guest');
             done();   // Always call the 'done()' callback when finished.
           });
       });

@@ -2,6 +2,8 @@
 
 ## Challenges:
 
+### Unit Tests
+
 - Learn How JavaScript Assertions Work
 - Test if a Variable or Function is Defined
 - Use Assert.isOK and Assert.isNotOK
@@ -19,6 +21,10 @@
 - Test if an Object has a Property
 - Test if a Value is of a Specific Data Structure Type
 - Test if an Object is an Instance of a Constructor
+
+### Functional Tests
+
+- Run Functional Tests on API Endpoints using Chai-HTTP
 
 ---
 
