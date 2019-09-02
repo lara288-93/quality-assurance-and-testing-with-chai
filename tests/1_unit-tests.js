@@ -165,30 +165,30 @@ suite('Unit Tests', function () {
  // ----------------------------------------------------------------------------- 
 
   // These variables are used in the tests. Don't Edit them.
-  var Car = function() {
+  let Car = function () {
     this.model = 'cedan';
     this.engines = 1;
     this.wheels = 4;
   };
 
-  var Plane = function() {
+  let Plane = function () {
     this.model = '737';
     this.engines = ['left', 'right'];
     this.wheels = 6;
     this.wings = 2;
   };
   
-  var myCar = new Car();
-  var airlinePlane = new Plane();
+  let myCar = new Car();
+  let airlinePlane = new Plane();
 
-  suite('Objects', function(){
+  suite('Objects', function () {
     
     /** 16 - #property asserts that the actual object has a given property. **/
     // Use #property or #notProperty where appropriate
-    test('#property, #notProperty', function() {
-      assert.fail(myCar, 'wings', 'A car has not wings');
-      assert.fail(airlinePlane, 'engines', 'planes have engines');
-      assert.fail(myCar, 'wheels', 'Cars have wheels');
+    test('#property, #notProperty', function () {
+      assert.notProperty(myCar, 'wings', 'A car has not wings');
+      assert.property(airlinePlane, 'engines', 'planes have engines');
+      assert.property(myCar, 'wheels', 'Cars have wheels');
     });
 
     test('#typeOf, #notTypeOf', function() {
