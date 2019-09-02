@@ -87,12 +87,12 @@ suite('Functional Tests', function () {
     // see the server code for more details.
     
     // ### EXAMPLE ### 
-    suite('PUT /travellers', function(){
-      test('#example - responds with appropriate JSON data when sending {surname: "Polo"}',  function(done){
+    suite('PUT /travellers', function () {
+      test('#example - responds with appropriate JSON data when sending {surname: "Polo"}',  function (done) {
          chai.request(server)
           .put('/travellers')         // note the PUT method
           .send({surname: 'Polo'})    // attach the payload, encoded as JSON
-          .end(function(err, res){    // Send the request. Pass a Node callback
+          .end(function (err, res) {    // Send the request. Pass a Node callback
 
             assert.equal(res.status, 200, 'response status should be 200');
             assert.equal(res.type, 'application/json', "Response should be json");
@@ -115,25 +115,22 @@ suite('Functional Tests', function () {
       // !!!! Follow the order of the assertions in the preceding example!!!!, 
       // we rely on it in our tests.
       
-      test('send {surname: "Colombo"}',  function(done){
-       
-       // we setup the request for you...
-       chai.request(server)
-        .put('/travellers')
-        /** send {surname: 'Colombo'} here **/
-        // .send({...})
-        .end(function(err, res){
-          
-          /** your tests here **/
-          assert.fail(); // remove this after adding tests
-          
-          done(); // Never forget the 'done()' callback...
+      test('send {surname: "Colombo"}',  function (done) {
+        chai.request(server)
+            .put('/travellers')
+            .send({ name: "Cristoforo", surname: "Colombo" })
+            .end(function (err, res) {
+          assert.equal(res.status, 200);
+          assert.equal(res.type, 'application/json');
+          assert.equal(res.body.name, 'Cristoforo');
+          assert.equal(res.body.surname, 'Colombo');
+          done();
         });
       });
 
       /** Repetition is the mother of learning. **/
       // Try it again. This time without help !!
-      test('send {surname: "da Verrazzano"}', function(done) {
+      test('send {surname: "da Verrazzano"}', function (done) {
         /** place the chai-http request code here... **/
         
         /** place your tests inside the callback **/
