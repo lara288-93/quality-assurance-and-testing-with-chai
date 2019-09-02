@@ -12,6 +12,7 @@
 - Test if a Value is an Array
 - Test if an Array Contains an Item
 - Test if a Value is a String
+- Test if a String Contains a Substring
 
 ---
 
