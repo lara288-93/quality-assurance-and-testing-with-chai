@@ -26,6 +26,7 @@
 
 - Run Functional Tests on API Endpoints using Chai-HTTP
 - Run Functional Tests on API Endpoints using Chai-HTTP II
+- Run Functional Tests on an API Response using Chai-HTTP III - PUT method
 
 ---
 
