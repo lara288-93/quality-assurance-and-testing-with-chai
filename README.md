@@ -25,6 +25,7 @@
 ### Functional Tests
 
 - Run Functional Tests on API Endpoints using Chai-HTTP
+- Run Functional Tests on API Endpoints using Chai-HTTP II
 
 ---
 
