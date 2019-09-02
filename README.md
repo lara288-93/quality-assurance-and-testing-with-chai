@@ -18,6 +18,7 @@
 - Use Regular Expressions to Test a String
 - Test if an Object has a Property
 - Test if a Value is of a Specific Data Structure Type
+- Test if an Object is an Instance of a Constructor
 
 ---
 
