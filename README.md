@@ -1,5 +1,7 @@
 # Quality Assurance and Testing with Chai
 
+## Challenges:
+
 - Learn How JavaScript Assertions Work
 - Test if a Variable or Function is Defined
 - Use Assert.isOK and Assert.isNotOK
@@ -14,6 +16,7 @@
 - Test if a Value is a String
 - Test if a String Contains a Substring
 - Use Regular Expressions to Test a String
+- Test if an Object has a Property
 
 ---
 
