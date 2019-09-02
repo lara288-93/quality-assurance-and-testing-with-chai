@@ -11,6 +11,7 @@
 - Test if a Value Falls within a Specific Range
 - Test if a Value is an Array
 - Test if an Array Contains an Item
+- Test if a Value is a String
 
 ---
 
