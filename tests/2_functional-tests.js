@@ -147,7 +147,7 @@ suite('Functional Tests', function () {
   });
 
   // In the next challenges we are going to simulate the human interaction with
-  // a page using a device called 'Headless Browser'. A headless browser is a web
+  // a page using a tool called 'Headless Browser'. A headless browser is a web
   // browser without a graphical user interface. These kind of tools are
   // particularly useful for testing web pages as they are able to render
   // and understand HTML, CSS, and JavaScript the same way a browser would.
@@ -157,16 +157,16 @@ suite('Functional Tests', function () {
   // additional binaries to be installed. This feature makes it usable in
   // an environment such as Gomix. There are many other (more powerful) options.
 
-  var Browser = require('zombie');
+  const Browser = require('zombie');
 
   // On Gomix we'll use this setting
   /** ### Copy your project's url here  ### **/
-  Browser.site = 'https://sincere-cone.gomix.me'; 
+  Browser.site = 'https://sepia-tennis.glitch.me'; 
   
   // If you are testing on a local environment replace the line above  with 
   // Browser.localhost('example.com', (process.env.PORT || 3000));
 
-  suite('e2e Testing with Zombie.js', function() {
+  suite('e2e Testing with Zombie.js', function () {
     const browser = new Browser();
 
     // Mocha allows You to prepare the ground running some code
@@ -179,11 +179,11 @@ suite('Functional Tests', function () {
     // Other different hook types can be executed before each test, after
     // each test, or at the end of a suite. See the Mocha docs for more infos.
 
-    suiteSetup(function(done) { // Remember, web interactions are asynchronous !!
+    suiteSetup(function (done) { // Remember, web interactions are asynchronous !!
       return browser.visit('/', done);  // Browser asynchronous operations take a callback
     });
 
-    suite('"Famous Italian Explorers" form', function() {
+    suite('"Famous Italian Explorers" form', function () {
       
       // In the HTML main view we provided a input form.
       // It sends data to the "PUT /travellers" endpoint that we used above
@@ -200,29 +200,22 @@ suite('Functional Tests', function () {
       // Did it ? Ok. Let's see how to automate the process...
       
       // ### EXAMPLE ###
-      test('#example - submit the input "surname" : "Polo"', function(done) {
-        browser
-          .fill('surname', 'Polo')
-          .pressButton('submit', function(){
+      test('#example - submit the input "surname" : "Polo"', function (done) {
+        browser.fill('surname', 'Polo');
+        browser.pressButton('submit', function () {
             // pressButton is ## Async ##.  
             // It waits for the ajax call to complete...
-
-            // assert that status is OK 200
-            browser.assert.success();
-            // assert that the text inside the element 'span#name' is 'Marco'
-            browser.assert.text('span#name', 'Marco');
-            // assert that the text inside the element 'span#surname' is 'Polo'
-            browser.assert.text('span#surname', 'Polo');
-            // assert that the element(s) 'span#dates' exist and their count is 1
-            browser.assert.element('span#dates', 1);
-
-            done();   // It's an async test, so we have to call 'done()''
-          });
+          browser.assert.success();
+          browser.assert.text('span#name', 'Marco');
+          browser.assert.text('span#surname', 'Polo');
+          browser.assert.element('span#dates', 1);
+          done();
+        });
       });
 
       /** Now it's your turn. Please don't use the keyword #example in the title. **/
       
-      test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
+      test('submit "surname" : "Colombo" - write your e2e test...', function (done) {
 
         // fill the form...
         // then submit it pressing 'submit' button.
@@ -232,41 +225,34 @@ suite('Functional Tests', function () {
         // assert that the text inside the element 'span#name' is 'Cristoforo'
         // assert that the text inside the element 'span#surname' is 'Colombo'
         // assert that the element(s) 'span#dates' exist and their count is 1
-        browser
-          .fill('surname', 'Colombo')
-          .pressButton('submit', function(){
-            
-            /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
-            
-            // pressButton is Async.  Waits for the ajax call to complete...
-
-            // assert that status is OK 200
-
-            // assert that the text inside the element 'span#name' is 'Cristoforo'
-
-            // assert that the text inside the element 'span#surname' is 'Colombo'
-
-            // assert that the element(s) 'span#dates' exist and their count is 1
-            
-            assert.fail();
-            
-            done();   // It's an async test, so we have to call 'done()''
+        browser.fill('surname', 'Colombo');
+        browser.pressButton('submit', function () {
+            browser.assert.success();
+            browser.assert.text('span#name', 'Cristoforo');
+            browser.assert.text('span#surname', 'Colombo');
+            browser.assert.element('span#dates', 1);
+            done();
           });
         // 
       });
       
-      /** Try it again... No help this time **/
-      test('submit "surname" : "Vespucci" - write your e2e test...', function(done) {
+//       /** Try it again... No help this time **/
+//       test('submit "surname" : "Vespucci" - write your e2e test...', function(done) {
 
-        // fill the form, and submit.
-        // assert that status is OK 200
-        // assert that the text inside the element 'span#name' is 'Amerigo'
-        // assert that the text inside the element 'span#surname' is 'Vespucci'
-        // assert that the element(s) 'span#dates' exist and their count is 1
-        assert.fail();
-        done();
-      
-      });
+//         // fill the form, and submit.
+//         browser.fill('surname', 'Vespucci');
+//         browser.pressButton('submit', function () {
+//           // assert that status is OK 200
+//           browser.assert.success();
+//           // assert that the text inside the element 'span#name' is 'Amerigo'
+//           browser.assert.text('span#name', 'Amerigo');
+//           // assert that the text inside the element 'span#surname' is 'Vespucci'
+//           browser.assert.text('span#surname', 'Vespucci');
+//           // assert that the element(s) 'span#dates' exist and their count is 1
+//           browser.assert.element('span#dates', 1);
+//           done();
+//         })
+//       });
     });
   });
 });
