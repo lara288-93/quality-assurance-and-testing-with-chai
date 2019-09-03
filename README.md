@@ -29,6 +29,7 @@
 - Run Functional Tests on an API Response using Chai-HTTP III - PUT method
 - Run Functional Tests on an API Response using Chai-HTTP IV - PUT method
 - Run Functional Tests using a Headless Browser
+- Run Functional Tests using a Headless Browser II
 
 ---
 
