@@ -203,8 +203,8 @@ suite('Functional Tests', function () {
       test('#example - submit the input "surname" : "Polo"', function (done) {
         browser.fill('surname', 'Polo');
         browser.pressButton('submit', function () {
-            // pressButton is ## Async ##.  
-            // It waits for the ajax call to complete...
+          // pressButton is ## Async ##.  
+          // It waits for the ajax call to complete...
           browser.assert.success();
           browser.assert.text('span#name', 'Marco');
           browser.assert.text('span#surname', 'Polo');
@@ -227,12 +227,12 @@ suite('Functional Tests', function () {
         // assert that the element(s) 'span#dates' exist and their count is 1
         browser.fill('surname', 'Colombo');
         browser.pressButton('submit', function () {
-            browser.assert.success();
-            browser.assert.text('span#name', 'Cristoforo');
-            browser.assert.text('span#surname', 'Colombo');
-            browser.assert.element('span#dates', 1);
-            done();
-          });
+          browser.assert.success();
+          browser.assert.text('span#name', 'Cristoforo');
+          browser.assert.text('span#surname', 'Colombo');
+          browser.assert.element('span#dates', 1);
+          done();
+        });
         // 
       });
       
